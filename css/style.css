@@ -1,58 +1,144 @@
-/* -----------------------------
-   Global page styling
------------------------------- */
+/* =========================================================
+   1. GLOBAL FOUNDATION
+   ========================================================= */
 
+/* Font + base styling */
 body {
     margin: 0;
-    font-family: "Arial", sans-serif;
-    line-height: 1.6;
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.7;
     color: #222;
     background-color: #ffffff;
 }
 
 /* Links */
 a {
-    text-decoration: none;
     color: #1f4e79;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
+    color: #0f2f4a;
     text-decoration: underline;
 }
 
-/* -----------------------------
-   Navigation bar
------------------------------- */
+
+/* =========================================================
+   2. TYPOGRAPHY SYSTEM
+   ========================================================= */
+
+h1 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+}
+
+
+/* =========================================================
+   3. LAYOUT SYSTEM
+   ========================================================= */
+
+/* Main page container */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Reusable section block */
+.section {
+    max-width: 800px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================================================
+   4. NAVIGATION SYSTEM
+   ========================================================= */
 
 header {
     background-color: #1f4e79;
     padding: 15px 0;
 }
 
-nav {
+.navbar {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
+    align-items: center;
 }
 
-nav a {
+.navbar a {
     color: white;
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 0.3px;
 }
 
-nav a:hover {
+.navbar a:hover {
     color: #ffd966;
 }
 
-/* -----------------------------
-   Hero section
------------------------------- */
+
+/* Dropdown navigation */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #1f4e79;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* =========================================================
+   5. HERO SECTION
+   ========================================================= */
 
 .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 80px 20px;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+}
+
+.hero-text {
+    max-width: 700px;
 }
 
 .hero-text h1 {
@@ -75,43 +161,15 @@ nav a:hover {
 
 .hero-image img {
     width: 220px;
+    height: auto;
     border-radius: 12px;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
-/* -----------------------------
-   General content sections
------------------------------- */
 
-.section {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-
-.section h2 {
-    font-size: 24px;
-    color: #1f4e79;
-    margin-bottom: 15px;
-}
-
-.section p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.7;
-}
-
-.section ul {
-    padding-left: 20px;
-}
-
-.section li {
-    margin-bottom: 8px;
-}
-
-/* -----------------------------
-   Project card grid
------------------------------- */
+/* =========================================================
+   6. PROJECT COMPONENTS
+   ========================================================= */
 
 .project-grid {
     display: grid;
@@ -142,54 +200,10 @@ nav a:hover {
     color: #1f4e79;
 }
 
-/* -----------------------------
-   Dropdown navigation
------------------------------- */
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    align-items: center;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: #1f4e79;
-}
-
-.dropdown-content a:hover {
-    background-color: #f2f2f2;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* -----------------------------
-   Global layout system
------------------------------- */
-
-.page-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-}
+/* =========================================================
+   7. FOOTER
+   ========================================================= */
 
 .footer {
     text-align: center;
@@ -197,4 +211,47 @@ nav a:hover {
     color: #777;
     font-size: 14px;
     border-top: 1px solid #eee;
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION
+   ========================================================= */
+
+.navbar a.active {
+    color: #ffd966;
+    border-bottom: 2px solid #ffd966;
+    padding-bottom: 4px;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero-image img {
+        width: 180px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .section {
+        margin: 40px auto;
+    }
+
 }

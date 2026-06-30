@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="css/style.css">
 
     <meta charset="UTF-8">
@@ -16,16 +17,28 @@
 <body>
     <header>
 
-        <nav>
-
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="research.html">Research</a>
-            <a href="projects.html">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
-
-        </nav>
+          <nav class="navbar">
+          
+              <a href="index.html" class= "active">Home</a>
+              <a href="about.html">About</a>
+              <a href="research.html">Research</a>
+          
+              <div class="dropdown">
+          
+                  <a href="projects.html" class="dropbtn">Projects ▾</a>
+          
+                  <div class="dropdown-content">
+                      <a href="projects/project1.html">Masters Research (1)</a>
+                      <a href="projects/project2.html">Masters Research (2)</a>
+                      <a href="projects/project3.html">Undergraduate Research</a>
+                  </div>
+          
+              </div>
+          
+              <a href="cv.html">CV</a>
+              <a href="contact.html">Contact</a>
+          
+          </nav>
 
     </header>
 
@@ -42,8 +55,51 @@
              in molecular biology, biochemistry, amphibian ecology, and infectious disease.
         </p>
 
-    </section>
+    </div>
+    
+    <div class="hero-image">
 
+        <img src="images/profile.jpg" alt="Profile photo">
+
+    </div>
+
+     <ul>
+        <li>Molecular and Biochemistry: pulse chase radio-labeling, qRT-PCR, RNA/DNA extraction,
+        plasmid construction, BAC2H, CRISPR-FINDeM.</li>
+        <li>Amphibian Ecology & Infectious Disease: metabolite challenge assays, field ecology,
+        animal husbandry, sterile isolation of pathogens, environmental sampling.</li>
+        <li>Computational Biology/CS: Bioinformatical analysis on WGS and variant calling DNA, 
+        microsatellite analysis, R & Python Programming, website construction.</li>
+    </ul>
+
+</section>
+
+
+<!-- PROJECTS PREVIEW -->
+<section class="section">
+
+    <h2>Selected Projects</h2>
+    
+    <div class="project-grid">
+
+        <a href="projects/project1.html" class="project-card">
+            <h3>Masters Research (1):</h3>
+            <p>Impact of lipid metabolites in Saccharomyces cerevisiae.</p>
+        </a>
+
+        <a href="projects/project2.html" class="project-card">
+            <h3>Masters Research (2)</h3>
+            <p>Protein-protein interactions in Streptomyces venezuelae.</p>
+        </a>
+
+        <a href="projects/project3.html" class="project-card">
+            <h3>Undergraduate Research:</h3>
+            <p>Isolation of the amphibian chytrid fungus, Batrachochytrium dendrobatidis, from the Pymatuning Reservoir.</p>
+        </a>
+
+    </div>
+
+</section>
 
 
 
